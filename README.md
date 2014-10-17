@@ -89,5 +89,5 @@ __Options__
 ```javascript
   roleProvider          { Function } /* defaults to function(req){ return req.user.roles;}             */
   resourceProvider      { Function } /* defaults to function(req){ return req.url;}                    */
-  permissionProvider    { Funciton } /* defaults to function(req){ return req.method.toLowerCase();}   */
+  permissionProvider    { Function } /* defaults to function(req){ return req.method.toLowerCase();}   */
 ```
