@@ -5,7 +5,7 @@ Inspired by [acl](https://github.com/OptimalBits/node_acl "node_acl")
 
 ##Status
 
-[![BuildStatus](https://secure.travis-ci.org/futurechan/connect-acl.png?branch=master)](https://travis-ci.org/futurechan/connect-acl)
+[![BuildStatus](https://secure.travis-ci.org/futurechan/Connect-Acl.png?branch=master)](https://travis-ci.org/futurechan/Connect-Acl)
 
 
 ##Installation
