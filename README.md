@@ -48,7 +48,6 @@ acl.allow([
 ### check()
 ```javascript
 acl.check(roles, resource, permission)
-
 roles { string | array of strings }
 
 ```
@@ -56,14 +55,12 @@ roles { string | array of strings }
 <a name="middleware"/>
 ### allow()
 ```javascript
-
 app.use(acl.middleware(opts));
 
 ```
-
 __Options__
 ```javascript
-    roleProvider				{function} /* defaults to function(req){ return req.user.roles;}						*/
-	resourceProvider		{function} /* defaults to function(req){ return req.route.path;}						*/
-	permissionProvider	{funciton} /* defaults to function(req){ return req.method.toLowerCase();}	*/
+    roleProvider              {function} /* defaults to function(req){ return req.user.roles;}                      */
+	resourceProvider       {function} /* defaults to function(req){ return req.route.path;}                     */
+	permissionProvider    {funciton} /* defaults to function(req){ return req.method.toLowerCase();}   */
 ```
