@@ -26,7 +26,7 @@ npm install connect-acl
 
 ```javascript
 var Acl = require('connect-acl')    
-    , acl = new Acl()
+  , acl = new Acl()
 ;
 ```
 
@@ -34,38 +34,38 @@ var Acl = require('connect-acl')
 ### allow()
 ```javascript
 acl.allow([
-	{
-		roles:['someRole'], 
-		allows:[
-			{resources:'/resource1', permissions:['get', 'post']},
-			{resources:'/resource2', permissions:['get', 'post']}
-		]
-	}
+  {
+    roles:['someRole'], 
+    allows:[
+      { resources:'/resource1', permissions:['get', 'post'] },
+      { resources:'/resource2', permissions:['get', 'post'] }
+    ]
+  }
 ])
 ```
 Regular expression are also supported
 ```javascript
 acl.allow([
-	{
-		roles:['someRole'], 
-		allows:[
-			{resources:'/resource1(/[0-9]+)?', permissions:['get', 'post', 'put']},
-			{resources:'/resource2(/[0-9]+)?', permissions:['get', 'post', 'put']}
-		]
-	}
+  {
+    roles:['someRole'], 
+    allows:[
+      { resources:'/resource1(/[0-9]+)?', permissions:['get', 'post', 'put'] },
+      { resources:'/resource2(/[0-9]+)?', permissions:['get', 'post', 'put'] }
+    ]
+  }
 ])
 ```
 Do not include ```^``` and ```$```. Those will be added for you.
 
-You can also omit access to the parent resource while allowing access to the subresource by omitting the allowance on the root resource
+You can also omit access to the parent resource while allowing access to the subresource
 ```javascript
 acl.allow([
-	{
-		roles:['someOtherRole'], 
-		allows:[
-			{resources:'/resource/[0-9]+/subresource/[0-9]+', permissions:['get', 'post', 'put']}
-		]
-	}
+  {
+    roles:['someOtherRole'], 
+    allows:[
+      {resources:'/resource/[0-9]+/subresource/[0-9]+', permissions:['get', 'post', 'put']}
+    ]
+  }
 ])
 ```
 
@@ -73,7 +73,9 @@ acl.allow([
 ### check()
 ```javascript
 acl.check(roles, resource, permission)
-roles { string | array of strings }
+  roles      { string | array of strings }
+  resource   { string }
+  permission {string }
 
 ```
 
@@ -85,7 +87,7 @@ app.use(acl.middleware(opts));
 ```
 __Options__
 ```javascript
-    roleProvider              {function} /* defaults to function(req){ return req.user.roles;}                      */
-	resourceProvider       {function} /* defaults to function(req){ return req.url;}                                */
-	permissionProvider    {funciton} /* defaults to function(req){ return req.method.toLowerCase();}   */
+  roleProvider          {function} /* defaults to function(req){ return req.user.roles;}             */
+  resourceProvider      {function} /* defaults to function(req){ return req.url;}                    */
+  permissionProvider    {funciton} /* defaults to function(req){ return req.method.toLowerCase();}   */
 ```
