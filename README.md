@@ -80,7 +80,7 @@ acl.check(roles, resource, permission)
 ```
 
 <a name="middleware"/>
-### allow()
+### middleware()
 ```javascript
 app.use(acl.middleware(opts));
 
