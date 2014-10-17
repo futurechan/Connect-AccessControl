@@ -61,6 +61,6 @@ app.use(acl.middleware(opts));
 __Options__
 ```javascript
     roleProvider              {function} /* defaults to function(req){ return req.user.roles;}                      */
-	resourceProvider       {function} /* defaults to function(req){ return req.route.path;}                     */
+	resourceProvider       {function} /* defaults to function(req){ return req.url;}                                */
 	permissionProvider    {funciton} /* defaults to function(req){ return req.method.toLowerCase();}   */
 ```
