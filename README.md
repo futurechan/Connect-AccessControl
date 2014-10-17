@@ -38,7 +38,32 @@ acl.allow([
 		roles:['someRole'], 
 		allows:[
 			{resources:'/resource1', permissions:['get', 'post']},
-			{resources:'/resource1/:id', permissions:['get', 'put']}
+			{resources:'/resource2', permissions:['get', 'post']}
+		]
+	}
+])
+```
+Regular expression are also supported
+```javascript
+acl.allow([
+	{
+		roles:['someRole'], 
+		allows:[
+			{resources:'/resource1(/[0-9]+)?', permissions:['get', 'post', 'put']},
+			{resources:'/resource2(/[0-9]+)?', permissions:['get', 'post', 'put']}
+		]
+	}
+])
+```
+Do not include ```^``` and ```$```. Those will be added for you.
+
+You can also omit access to the parent resource while allowing access to the subresource by omitting the allowance on the root resource
+```javascript
+acl.allow([
+	{
+		roles:['someOtherRole'], 
+		allows:[
+			{resources:'/resource/[0-9]+/subresource/[0-9]+', permissions:['get', 'post', 'put']}
 		]
 	}
 ])

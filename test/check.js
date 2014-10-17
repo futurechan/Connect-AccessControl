@@ -109,4 +109,23 @@ describe('Acl.check()', function(){
 			done();
 		});
 	})	
+	
+	it('should attempt a regex match on the resource if string match fails', function(done){
+	
+		acl.allow([
+			{
+				roles:'role1', 
+				allows:[
+					{ resources:'/resource(/[0-9]+)?', permissions:['get','post','put','delete']}			
+				]		
+			}
+		])
+	
+		acl.check(['role1'], '/resource/123', 'get', function(err, isAllowed){
+			expect(err).to.not.be.ok;
+			expect(isAllowed).to.be.true;			
+			
+			done();
+		});
+	})	
 })

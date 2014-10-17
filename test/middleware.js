@@ -29,9 +29,7 @@ describe('Acl.middleware()', function(){
 			user:{
 				roles:['role']
 			},
-			route:{
-				path:'/resource/:id'
-			},
+			url:'/resource/:id',
 			method:'GET'
 		};
 		
@@ -65,9 +63,7 @@ describe('Acl.middleware()', function(){
 		
 		var req = {
 			someRolesProperty:['role'],
-			route:{
-				path:'/resource/:id'
-			},
+			url:'/resource/:id',
 			method:'GET'
 		};
 		
@@ -139,9 +135,7 @@ describe('Acl.middleware()', function(){
 			user:{
 				roles:['role']
 			},
-			route:{
-				path:'/resource/:id'
-			}
+			url:'/resource/:id',
 		};
 		
 		var res = {};
