@@ -75,7 +75,7 @@ acl.allow([
 acl.check(roles, resource, permission)
   roles      { string | array of strings }
   resource   { string }
-  permission {string }
+  permission { string }
 
 ```
 
@@ -87,7 +87,7 @@ app.use(acl.middleware(opts));
 ```
 __Options__
 ```javascript
-  roleProvider          {function} /* defaults to function(req){ return req.user.roles;}             */
-  resourceProvider      {function} /* defaults to function(req){ return req.url;}                    */
-  permissionProvider    {funciton} /* defaults to function(req){ return req.method.toLowerCase();}   */
+  roleProvider          { function } /* defaults to function(req){ return req.user.roles;}             */
+  resourceProvider      { function } /* defaults to function(req){ return req.url;}                    */
+  permissionProvider    { funciton } /* defaults to function(req){ return req.method.toLowerCase();}   */
 ```
