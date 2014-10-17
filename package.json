@@ -1,0 +1,21 @@
+{
+  "name": "connect-acl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha -R nyan"
+  },
+  "author": "Joshua Chan <joshua.bennett.chan@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "mocha": "^1.21.5"
+  },
+  "dependencies": {
+    "boom": "^2.5.1"
+  }
+}
