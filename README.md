@@ -5,7 +5,7 @@ Inspired by [acl](https://github.com/OptimalBits/node_acl "node_acl")
 
 ##Status
 
-[![BuildStatus](https://secure.travis-ci.org/futurechan/Connect-AccessControl.png?branch=master)](https://travis-ci.org/futurechan/Connect-AccessControl)[![DependencyStatus](https://david-dm.org/futurechan/Connect-AccessControl.png?branch=master)](https://david-dm.org/futurechan/Connect-AccessControl.png?branch=master)
+[![BuildStatus](https://secure.travis-ci.org/futurechan/Connect-AccessControl.png?branch=master)](https://travis-ci.org/futurechan/Connect-AccessControl) [![DependencyStatus](https://david-dm.org/futurechan/Connect-AccessControl.png?branch=master)](https://david-dm.org/futurechan/Connect-AccessControl.png?branch=master)
 
 
 ##Installation
