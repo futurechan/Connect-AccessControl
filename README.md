@@ -13,7 +13,7 @@ Inspired by [acl](https://github.com/OptimalBits/node_acl "node_acl")
 Using npm:
 
 ```javascript
-npm install connect-acl
+npm install connect-accesscontrol
 ```
 
 ##Documentation
@@ -25,7 +25,7 @@ npm install connect-acl
 ##Examples
 
 ```javascript
-var Acl = require('connect-acl')    
+var Acl = require('connect-accesscontrol')
   , acl = new Acl()
 ;
 ```
