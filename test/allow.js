@@ -195,25 +195,19 @@ describe('Acl.allow()', function(){
 	
 		acl.allow([
 			{
-				roles:['role1'], 
+				roles:['role1', 'role2'],
 				allows:[
 					{ resources:['/resource1'], permissions:['get']}			
 				]		
-			}
-		])
-
-        acl.allow([
+			},
             {
                 roles:['role1'],
                 allows:[
                     { resources:['/resource1'], permissions:['put']}
                 ]
-            }
-        ])
-		
-		acl.allow([
+            },
 			{
-				roles:['role1'], 
+				roles:['role2'],
 				allows:[
 					{ resources:['/resource2'], permissions:['post']}			
 				]		
@@ -224,8 +218,13 @@ describe('Acl.allow()', function(){
 		expect(acl.list['role1']).to.include.keys('/resource1');		
 		expect(acl.list['role1']['/resource1']).to.include('get');
 		expect(acl.list['role1']['/resource1']).to.include('put');
-		expect(acl.list['role1']['/resource2']).to.include('post');
-	
+
+        expect(acl.list).to.include.keys('role2');
+        expect(acl.list['role2']).to.include.keys('/resource1');
+        expect(acl.list['role2']).to.include.keys('/resource2');
+        expect(acl.list['role2']['/resource1']).to.include('get');
+        expect(acl.list['role2']['/resource2']).to.include('post');
+
 		done();
 	
 	})
