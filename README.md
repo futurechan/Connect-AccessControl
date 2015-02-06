@@ -37,12 +37,15 @@ acl.allow([
   {
     roles:['someRole'], 
     allows:[
-      { resources:'/resource1', permissions:['get', 'post'] },
-      { resources:'/resource2', permissions:['get', 'post'] }
+      { resources:'/resource1', permissions:'get' },
+      { resources:'/resource2', permissions:['get', 'post', 'put'] },
+      { resources:'/resource3', permissions:'*' }
     ]
   }
 ])
 ```
+Permissions can be a single verb, an array of verbs. If you want to grant any action to a role, you can use '*'.
+
 Regular expression are also supported
 ```javascript
 acl.allow([

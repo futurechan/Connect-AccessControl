@@ -97,7 +97,7 @@ describe('Acl.check()', function(){
 			},{
 				roles:'role2', 
 				allows:[
-					{ resources:'/resource1', permissions:'put'}			
+					{ resources:'/resource1', permissions:'put'}
 				]		
 			}
 		])
@@ -108,7 +108,23 @@ describe('Acl.check()', function(){
 			
 			done();
 		});
-	})	
+	})
+
+    it('should interpret \'*\' as granting any permission on a resource', function(done){
+        acl.allow({
+            roles:'role',
+            allows:[
+                { resources:'/resource', permissions:'*'}
+            ]
+        })
+
+        acl.check('role', '/resource', 'get', function(err, isAllowed){
+            expect(err).to.not.be.ok;
+            expect(isAllowed).to.be.true;
+
+            done();
+        });
+    })
 	
 	it('should attempt a regex match on the resource if string match fails', function(done){
 	
